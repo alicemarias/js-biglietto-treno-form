@@ -1,0 +1,24 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: purple;
+}
+body h2 {
+  text-align: center;
+}
+.compilazione {
+  background-color: white;
+  margin: 50px;
+  border: 1px solid white;
+  border-radius: 5px;
+}
+#biglietto {
+  background-color: white;
+  margin: 50px;
+  border: 1px solid white;
+  border-radius: 5px;
+}
