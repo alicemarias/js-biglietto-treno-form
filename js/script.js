@@ -10,8 +10,8 @@ var formEta = document.getElementById('form-eta');
 // ELEMENTI BIGLIETTO
 var ticketNome = document.getElementById('ticket-nome');
 var ticketCosto = document.getElementById('ticket-costo');
+var ticketOfferta = document.getElementById('ticket-offerta');
 
-//
 var formKmValue;
 var formEtaValue;
 
@@ -23,16 +23,23 @@ buttonGenera.addEventListener('click',
 
     //  compilo elementi ticket
     ticketNome.innerHTML = formNome.value;
-    ticketCosto.innerHTML = prezzo + 'euro';
 
     // calcolo prezzo ticket
-    var prezzo = formKmValue * 0.21;
+    var prezzo = (formKmValue * 0.21);
+    // calcolo offerte
+    var offerta = 'Ticket standard';
     // calcolo sconti
-    if(formEtaValue =='minorenne') {
-      prezzo = prezzo - (prezzo * 20 / 100);
-    } else if (formEtaValue =='over') {
-      prezzo = prezzo - (prezzo * 40 / 100);
+    if(formEtaValue == 'minorenne') {
+      prezzo = (prezzo - (prezzo * 20 / 100));
+      offerta= 'Sconto minorenni';
+    } else if (formEtaValue == 'over') {
+      prezzo = (prezzo - (prezzo * 40 / 100));
+      offerta= 'Sconto over 65';
     }
+      // costo ticket
+      ticketCosto.innerHTML = prezzo + 'euro';
+      // offerta ticket 
+      ticketOfferta.innerHTML = offerta;
 
   }
 
@@ -43,15 +50,18 @@ buttonAnnulla.addEventListener('click',
   function() {
     //annullamento nome
     formNome.value = '';
-    ticketNome.innerHTML ='';
+    ticketNome.innerHTML = '';
     // annullamento km
-    formKm.value='';
+    formKm.value= '';
 
     //annullamento eta
-    formEta.value='minorenne';
+    formEta.value= 'minorenne';
 
     // annullamento costo biglietto
-    ticketCosto.innerHTML ='';
+    ticketCosto.innerHTML = '';
+
+    // annullamento offerta
+    ticketOfferta.innerHTML = '';
   }
 
 );
