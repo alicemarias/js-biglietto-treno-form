@@ -5,7 +5,7 @@
 }
 
 body {
-  background-color: purple;
+  background-color: darkred;
 }
 body h2 {
   text-align: center;
@@ -16,9 +16,15 @@ body h2 {
   border: 1px solid white;
   border-radius: 5px;
 }
-#biglietto {
+#ticket{
   background-color: white;
   margin: 50px;
   border: 1px solid white;
   border-radius: 5px;
+}
+.hidden {
+  display: none;
+}
+.show {
+  display: block;
 }
